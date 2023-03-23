@@ -2,7 +2,6 @@
 
 .container-fluid {
     padding: 3% 15% 7%;
-
 }
 
 /*Nav bar*/
@@ -25,7 +24,6 @@
 .navbar-brand {
     font-family: 'Ubuntu';
     font-size: 2.5rem;
-
 }
 
 /*Title section*/
@@ -53,7 +51,6 @@
 
 .features-block {
     padding: 4.5rem 0;
-    text-align: center;
 }
 
 .features-icon {
@@ -76,11 +73,9 @@
     color: #8f8f8f;
 }
 
-
 /*Testimonial Section*/
 #testimonials {
     color: #fff;
-    text-align: center;
     background-color: #ef8172;
 }
 
@@ -96,7 +91,6 @@
 
 #press {
     background-color: #ef8172;
-    text-align: center;
     padding-bottom: 3%;
 }
 
@@ -105,15 +99,17 @@
     margin: 1.2rem 1.2rem 4rem;
 }
 
-.pricing-column {
-    padding: 3% 2%;
-    text-align: center;
-}
-
 /* Pricing Section*/
 #pricing {
-    padding: 5rem;
-    text-align: center;
+    padding: 3% 2%;
+}
+
+.pricing-column {
+    padding: 3% 2%;
+}
+
+.card {
+    min-height: 24rem;
 }
 
 /*cta*/
@@ -121,7 +117,6 @@
     background-color: #ff4c68;
     color: #fff;
     padding: 4rem 0 2rem 0;
-    text-align: center;
 }
 
 .cta-text {
@@ -132,7 +127,6 @@
 #footer {
     background-color: #fff;
     padding: 2rem 0;
-    text-align: center;
 }
 
 .social-medias {
@@ -152,25 +146,20 @@ h1 {
 }
 
 h2 {
-    font-family: 'Montserrat', sans-serif;
     font-size: 3rem;
 }
 
 h3 {
-    font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
     font-weight: bold;
 }
 
 body {
     font-family: 'Montserrat', sans-serif;
+    text-align: center;
 }
 
 @media screen and (max-width: 990px) {
-    #title {
-        text-align: center;
-    }
-
     .title-image {
         position: static;
         width: 60%;
