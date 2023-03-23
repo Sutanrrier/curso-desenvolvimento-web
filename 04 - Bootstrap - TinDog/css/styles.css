@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Ubuntu&display=swap');
 
 .container-fluid {
-    padding: 3% 15%;
+    padding: 3% 15% 7%;
 
 }
 
@@ -34,8 +34,10 @@
 }
 
 .title-image {
-    width: 60%;
+    width: 25%;
     transform: rotate(25deg);
+    position: absolute;
+    right: 22%
 }
 
 #title {
@@ -44,6 +46,11 @@
 }
 
 /*Features Section*/
+#features {
+    background-color: white;
+    position: relative;
+}
+
 .features-block {
     padding: 4.5rem 0;
     text-align: center;
@@ -109,6 +116,34 @@
     text-align: center;
 }
 
+/*cta*/
+#cta {
+    background-color: #ff4c68;
+    color: #fff;
+    padding: 4rem 0 2rem 0;
+    text-align: center;
+}
+
+.cta-text {
+    margin: 0 12rem;
+}
+
+/*footer*/
+#footer {
+    background-color: #fff;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.social-medias {
+    padding: 1rem 0;
+}
+
+.media-icon {
+    padding: 0 0.5rem;
+    font-size: 1.2rem;
+}
+
 /*Global Tags*/
 h1 {
     font-size: 3.5rem;
@@ -129,4 +164,20 @@ h3 {
 
 body {
     font-family: 'Montserrat', sans-serif;
+}
+
+@media screen and (max-width: 990px) {
+    #title {
+        text-align: center;
+    }
+
+    .title-image {
+        position: static;
+        width: 60%;
+        transform: rotate(0deg);
+    }
+
+    .cta-text {
+        margin: 0 3rem;
+    }
 }
