@@ -1,13 +1,19 @@
 //Keysound pelo clique
 document.querySelectorAll("button").forEach(function (botao) {
     botao.addEventListener("click", function () {
-        getKeySound(this.innerHTML);
+        const botao = this.innerHTML.toLowerCase();
+
+        getKeySound(botao);
+        buttonAnimation(botao);
     });
 });
 
 //Keysound pelo teclado
 document.addEventListener("keydown", function (event) {
-    getKeySound(event.key);
+    const botao = event.key.toLowerCase();
+
+    getKeySound(botao);
+    buttonAnimation(botao);
 });
 
 //Lógica para Keysound
@@ -41,4 +47,11 @@ function getKeySound(botao) {
     if (audio != undefined) {
         audio.play();
     }
+}
+
+//Mudar visual do botão pressionado
+function buttonAnimation(botao) {
+    document.querySelector("." + botao).classList.add("pressed");
+
+    setTimeout(() => { document.querySelector("." + botao).classList.remove("pressed") }, 100);
 }
