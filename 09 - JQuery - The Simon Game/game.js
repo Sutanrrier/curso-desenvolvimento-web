@@ -6,9 +6,8 @@ let nivel = 0;
 let gameStarted = false;
 
 $(document).on("keypress", function () {
-    if (nivel === 0) {
-        gameStarted = true;
-        nextSequence();
+    if (gameStarted === false) {
+        startNewGame();
     }
 })
 
@@ -50,9 +49,10 @@ function checkAnswer() {
         }
     }
     else {
-        console.log("Errou!");
+        endGame();
     }
 }
+
 //Lógica para o som das teclas
 function playButtonSound(cor) {
     let audio;
@@ -80,6 +80,28 @@ function playButtonAnimation(cor) {
     $("#" + cor).addClass("pressed");
     setTimeout(() => {
         $("#" + cor).removeClass("pressed");
-    }, 100)
+    }, 100);
+}
 
+//Finaliza o jogo atual
+function endGame() {
+    $("body").addClass("game-over");
+    $("#level-title").text("Você perdeu! Aperte uma tecla para reiniciar");
+    gameStarted = false;
+
+    const audio = new Audio("./sounds/wrong.mp3");
+    audio.play();
+
+    setTimeout(() => {
+        $("body").removeClass("game-over");
+    }, 200);
+}
+
+//Inicia um novo jogo
+function startNewGame() {
+    gameStarted = true;
+    nivel = 0;
+    gamePattern = [];
+    playerPattern = [];
+    nextSequence();
 }
