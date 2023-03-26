@@ -2,8 +2,14 @@ const buttonColors = ["red", "blue", "green", "yellow"];
 
 const gamePattern = [];
 const playerPattern = [];
+let nivel = 0;
 
-nextSequence();
+
+$(document).on("keypress", function () {
+    if (nivel === 0) {
+        nextSequence();
+    }
+})
 
 //Lógica do jogador ao clicar em um botão
 $(".btn").on("click", function () {
@@ -17,6 +23,9 @@ $(".btn").on("click", function () {
 //Seleciona uma nova cor de forma aleatória e adiciona ao gamePattern atual
 function nextSequence() {
     const randomChosenColor = buttonColors[Math.floor(Math.random() * 4)];
+
+    nivel++;
+    $("#level-title").text("Level " + nivel);
 
     gamePattern.push(randomChosenColor);
     playButtonSound(randomChosenColor);
